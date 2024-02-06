@@ -7,6 +7,4 @@
     - Team Members in meeting
     - Recording:
     - Description of each user story using the following format. 
-    
-
-
+  
