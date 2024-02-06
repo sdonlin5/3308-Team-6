@@ -10,7 +10,7 @@
 
 ## Team members: Seiji Aoyama, Stephen Donlin (Scrum Master), Kevin Qian, and Patrick Sharp
 
-### Zoom link: 
+### Zoom link: https://cuboulder.zoom.us/rec/share/6CBh5iLN0VDnsd1lAtVhxQZkPhbRaY5zi1lnz4TmzrCVm5uzHIqrFW7TOwcWanzp.qBYbWnMQfwmDN7Pj
 
 ## User Stories
 
@@ -34,11 +34,15 @@ Effort Estimation
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	I, as a product manager
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	A developer makes a change or update to a task on the project
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	The updates and changes will reflect on the status page to show the project status and any recent updates or changes with the date the change was made
+
+* **When :** 	I update the project
+	
+* **Then :** 	The progress status page is updated with the report to reflect the change and the project status page is updated with details of the change and the date of the change.
 	
 <hr><hr><br><br>
 
@@ -63,11 +67,15 @@ Effort Estimation
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	A set of URLS 
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	The script is executed
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	The script should successfully navigate the web page and extract the relevant data fields and save them in a predetermined format. 
+
+* **When :** 	The data is successfully extracted into the determined format
+	
+* **Then :** 	The script should connect to the database and create or update tables as necessary and populate them with the extracted data 
 	
 <hr><hr><br><br>
 
@@ -96,11 +104,11 @@ Effort Estimation
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	That the data is distributed across multiple files. 
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	When I need to provide the summary. 
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	As a developer, I need to create python programs to collect the data. 
 	
 <hr><hr><br><br>
     
@@ -127,11 +135,11 @@ Effort Estimation
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	I, as a member
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	I need to know the database specifications for further development
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	I can check the database schema including tables, columns and relationships. AND The schema supports all identified data requirements with constraints.
 	
 <hr><hr><br><br>
     
@@ -193,11 +201,11 @@ Effort Estimation
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	That as a developer I need the correct tools to do my work. 
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	Before the project kicks-off. 
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	 I want to have a development environment set-up. 
 	
 <hr><hr><br><br>
 
@@ -219,11 +227,11 @@ Effort Estimation
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	I, as a team member
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	I want to access the Github page of the project
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	I can access the GitHib page of the project at any time without restrictions
 	
 <hr><hr><br><br>
 
@@ -256,4 +264,5 @@ Acceptance Criteria
      **AND**  Having a working knowledge of the development framework being used in the server
 	
 <hr><hr><br><br>
+  
   
