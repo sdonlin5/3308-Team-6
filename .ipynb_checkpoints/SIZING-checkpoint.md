@@ -17,10 +17,6 @@
 
 
 
-
-
-
-
 ### User Story 1
 <hr>
 
@@ -32,7 +28,7 @@
 
 Effort Estimation
 
-* **Level:** 2
+* **Level:** 3
 
 <hr>
 
@@ -46,11 +42,7 @@ Acceptance Criteria
 	
 <hr><hr><br><br>
 
-
-    
-    
-    
-    
+  
     
     
 
@@ -98,7 +90,7 @@ Acceptance Criteria
 
 Effort Estimation
 
-* **Level:** 3
+* **Level:** 4
 
 <hr>
 
@@ -129,7 +121,7 @@ Acceptance Criteria
 
 Effort Estimation
 
-* **Level:** 3
+* **Level:** 4
 
 <hr>
 
@@ -161,17 +153,21 @@ Acceptance Criteria
 
 Effort Estimation
 
-* **Level:** 3
+* **Level:** 5
 
 <hr>
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	I, as a member
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	I enter the web page URL
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	The home page, on average, loads in less than 3 seconds
+
+* **When :** 	I click on the next page button
+	
+* **Then :** 	The web page loads the next page in an average time of less than three seconds.
 	
 <hr><hr><br><br>
     
@@ -243,17 +239,21 @@ Acceptance Criteria
 
 Effort Estimation
 
-* **Level:** 8
+* **Level:** 10
 
 <hr>
 
 Acceptance Criteria
 
-* **Given:** 	\<context of action\><br><br>
+* **Given:** 	I, as a developer
 	
-* **When :** 	\<some action is completed\><br><br>
+* **When :** 	Tasked with developing a web server backend
 	
-* **Then :** 	\<set of observable outcomes\><br><br>
+* **Then :** 	I can have a well-planned way to host the server
+
+     **AND** Build a thorough database that can extract data and populate the tables, along with query data when needed
+ 
+     **AND**  Having a working knowledge of the development framework being used in the server
 	
 <hr><hr><br><br>
   
