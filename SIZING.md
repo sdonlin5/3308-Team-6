@@ -10,7 +10,7 @@
 
 ## Team members: Seiji Aoyama, Stephen Donlin (Scrum Master), Kevin Qian, and Patrick Sharp
 
-### Zoom link: 
+### Zoom link: https://cuboulder.zoom.us/rec/share/6CBh5iLN0VDnsd1lAtVhxQZkPhbRaY5zi1lnz4TmzrCVm5uzHIqrFW7TOwcWanzp.qBYbWnMQfwmDN7Pj
 
 ## User Stories
 
