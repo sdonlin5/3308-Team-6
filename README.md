@@ -40,11 +40,11 @@ Motivation: why are you working on this project?
 
 Risks to project completion, possibly including:
 
-new language or working environment
-
-no prior experience working with these team members
-
-lack of some needed resources
+>new language or working environment
+>
+>no prior experience working with these team members
+>
+>lack of some needed resources
 
 Mitigation Strategy for above risks
 
