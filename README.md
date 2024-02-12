@@ -14,9 +14,9 @@ Team members:
 
 2. Stephen Donlin
 
->GitHub: 
+>GitHub: KQian-lab
 >
->Email: @colorado.edu
+>Email: keqi8689@colorado.edu
 
 3. Kevin Qian
 
