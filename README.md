@@ -38,13 +38,15 @@ Vision statement: what would you tell potential customers?
 
 Motivation: why are you working on this project?
 
-Risks to project completion, possibly including:
+# Risks to project completion, possibly including:
 
->new language or working environment
+-Little experience with frontend languages
 >
->no prior experience working with these team members
+-Lack of upfront resources
 >
->lack of some needed resources
+-No prior experience working together as a team
+>
+-
 
 Mitigation Strategy for above risks
 
