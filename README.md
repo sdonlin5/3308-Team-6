@@ -40,12 +40,12 @@ Motivation: why are you working on this project?
 
 ## Risks to project completion, possibly including:
 
->-Little experience with frontend languages
->
->-Lack of upfront resources
->
->-No prior experience working together as a team
->
+-Little experience with frontend languages
+
+-Lack of upfront resources
+
+-No prior experience working together as a team
+
 
 
 Mitigation Strategy for above risks
