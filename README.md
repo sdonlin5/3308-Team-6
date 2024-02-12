@@ -41,13 +41,9 @@ Motivation: why are you working on this project?
 ## Risks to project completion:
 
 - Little experience with frontend languages
-
 - Lack of upfront resources
-
 - No prior experience working together as a team
-
 - No prior experience working on a distributed project
-
 - Potential misestimation of workload
 
 
