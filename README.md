@@ -38,7 +38,7 @@ Vision statement: what would you tell potential customers?
 
 Motivation: why are you working on this project?
 
-## Risks to project completion, possibly including:
+## Risks to project completion:
 
 - Little experience with frontend languages
 
@@ -52,7 +52,12 @@ Motivation: why are you working on this project?
 
 
 
-Mitigation Strategy for above risks
+## Mitigation Strategy for above risks:
+- Utilize resources on the internet to aid in frontend learning
+- Do research to discover resources to aid in project completion
+- Utilize weekly meetings to discuss and assist each other
+- Re-assess workload during weekly meetings
+
 
 Development method: scrum, kanban, waterfall: with specifics!
 
