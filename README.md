@@ -37,11 +37,10 @@ Day/Time/TimeZone for the scheduled team weekly meeting (30 minutes via Zoom): S
 Vision statement: what would you tell potential customers?
 
 ## Motivation: why are you working on this project?
-We commit to contributing these two values to users.
-1)Personal growth
-- Playing alone enables players to progress at their own pace, pursuing personal growth and a sense of achievement. It promotes their personal introspection, discipline, and strategic thinking.
-2)Joy of exploration and discovery
-- Our game is world exploration and puzzle-solving. It offers players the joy of discovery and the freedom to explore.
+
+To commit to contributing two values to users.
+- Personal growth: Playing alone enables players to progress at their own pace, pursuing personal growth and a sense of achievement. It promotes their personal introspection, discipline, and strategic thinking.
+- Joy of exploration and discovery: Our game is world exploration and puzzle-solving. It offers players the joy of discovery and the freedom to explore.
 
 
 ## Risks to project completion:
