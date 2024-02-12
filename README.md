@@ -8,9 +8,9 @@ Team members:
 
 1. Seiji Aoyama
 
->GitHub: 
+>GitHub: seej000
 >
->Email: @colorado.edu
+>Email: seao9385@colorado.edu
 
 2. Stephen Donlin
 
