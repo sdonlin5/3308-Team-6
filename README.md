@@ -60,6 +60,18 @@ To commit to contributing two values to users.
 - Re-assess workload during weekly meetings
 
 
-Development method: scrum, kanban, waterfall: with specifics!
+## Development method
+### A hybrid of Scrum and Kanban focusing on:
+- Working software over comprehensive documentation, Focusing more on building the software than having in-depth documentation.
+- Being open to changes: Being flexible to any change in project needs.
+- Frequent Delivery: Having weekly meetings to check progress and re-assess as needed
+- Continuous Collaboration and Improvement: Provide constant updates
+- Have face-to-face discussions: Conduct weekly Zoom meetings and Discord calls to discuss anything related to the project.
+- Measure Progress: Use Burndown charts to track and improve progress.
+- Keep things simple: Follow the K.I.S.S philosophy and keep realistic expectations 
+- Lean manufacturing: Focus on minimizing waste
+- Utilize a Kanban board; Visualize work, limit work-in-progress, and maximize efficiency
+- Start with an initial workflow and constantly improve.
+
 
 **Project Tracking Software link:** https://colorado-cspb.monday.com/users/sign_up?invitationId=36300316406946636000
