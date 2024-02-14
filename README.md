@@ -14,9 +14,9 @@ Team members:
 
 2. Stephen Donlin
 
->GitHub: 
+>GitHub: sdonlin5
 >
->Email: @colorado.edu
+>Email: stdo7291@colorado.edu
 
 3. Kevin Qian
 
@@ -34,7 +34,12 @@ Team members:
 
 Day/Time/TimeZone for the scheduled team weekly meeting (30 minutes via Zoom): Sundays @ 5 PM MST
 
-Vision statement: what would you tell potential customers?
+## Vision: what would you tell potential customers?
+[NAME TBD] is a free-to-play game that challenges players to solve a world of puzzles, unlocking new challenges as through introspection, discipline, and strategic thinking. Players can discover and explore the world while improving their skills or competing against friends for the highest score. [NAME TBD] is the ultimate  casual game for players who love to think, learn, and have fun. 
+
+## Mission: why are you working on this project?
+Create a unique puzzle-solving experience that delights and rewards players through exploration and creativity while building a vibrant community that encourages player engagement and retention that is accessible from any device with a web browser. 
+
 
 ## Motivation: why are you working on this project?
 
