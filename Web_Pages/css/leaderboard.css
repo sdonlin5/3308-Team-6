@@ -6,8 +6,8 @@
   padding: 0;
 }
 body {
-  border-top: 4px solid #DC0000;
-  background: #15151E;
+  border-top: 4px solid #fd6625;
+  background: #478ead;
   color: #fff;
   font-family: 'Rubik', sans-serif;
   /* center the table horizontally */
@@ -36,7 +36,7 @@ table:before {
   width: 1.5rem;
   border-radius: 5px;
   border: 1px solid #38383F;
-  background: repeating-linear-gradient(-45deg, #15151E 0px, #15151E 4px, #38383F 4px, #38383F 8px);
+  background: repeating-linear-gradient(-45deg, #fd6625 0px, #fd6625 4px, #fd6625 4px, #478ead 8px);
 }
 /* center every element nested in a table row */
 table tr > * {
@@ -78,7 +78,7 @@ table td.first {
   }
 
   table td.default {
-    color: #39cccc;
+    color: blue;
   }
 
 
