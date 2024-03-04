@@ -36,7 +36,7 @@ table:before {
   width: 1.5rem;
   border-radius: 5px;
   border: 1px solid #38383F;
-  background: repeating-linear-gradient(-45deg, #fd6625 0px, #fd6625 4px, #fd6625 4px, #478ead 8px);
+  background: repeating-linear-gradient(-45deg, #fd6625 0px, #478ead 4px, #e67e22 4px, #478ead 8px);
 }
 /* center every element nested in a table row */
 table tr > * {
@@ -54,7 +54,7 @@ table th {
   font-weight: 300;
   letter-spacing: 0.04rem;
   font-size: 0.9rem;
-  color: #eee;
+  color: #191970;
   text-transform: uppercase;
 }
 
@@ -77,9 +77,6 @@ table td.first {
     color: #cd7f32;
   }
 
-  table td.default {
-    color: blue;
-  }
 
 
 /* style the cell with the player visually */
@@ -114,4 +111,28 @@ table td.score span {
   table tr > *:nth-child(3) {
     display: none;
   }
+}
+
+.btnStack {
+  background-color: #fd6625;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 15px; 
+  margin-bottom: 34px;
+  transition: background-color 0.3s;
+  outline: none;
+  min-width: 20px; 
+  font-weight: bold;
+  font-size: 1.2vw; 
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+a.btnStack:hover {
+  background-color: #e67e22;
 }
