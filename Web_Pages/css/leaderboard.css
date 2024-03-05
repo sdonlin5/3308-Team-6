@@ -65,16 +65,19 @@ table td.placement {
 
 
 /* Placment colors */
-table td.first {
-    color: gold;
+table td.score.first span  {
+    background: #DAA520;     /* #FFD700 for a lighter gold */
+    color: black;
   }
 
-  table td.second {
-    color: #c0c0c0;
+  table td.score.second span{
+    background: #c0c0c0;
+    color: black
   }
 
-  table td.third {
-    color: #cd7f32;
+  table td.score.third span {
+    background: #cd7f32;
+    color: black;
   }
 
 
