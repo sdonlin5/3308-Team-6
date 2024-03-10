@@ -16,4 +16,7 @@ Author: Patrick Sharp
 Last Mofdified: 3/10/2024
 """
 def create(db_filename):
+    if type(db_filename) is not str:
+        raise ValueError
+        
     return None
