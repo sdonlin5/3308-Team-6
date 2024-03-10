@@ -16,7 +16,7 @@ Author: Patrick Sharp
 Last Mofdified: 3/10/2024
 """
 def create(db_filename):
-    if type(db_filename) is not str:
+    if type(db_filename) is not str or not db_filename:
         raise ValueError
     conn = sqlite3.connect(db_filename)
     c = conn.cursor()
@@ -29,7 +29,7 @@ def create(db_filename):
     """
     c.execute("CREATE TABLE IF NOT EXISTS Players (playerID INT, playerName VASRCHAR(3), lastLoginDate INT );")
     c.execute("CREATE TABLE IF NOT EXISTS Scores (playerID INT, score INT, date INT );")
-    c.execute("CREATE TABLE IF NOT EXISTS Temp ( playerID INT, playerEmail VARCHAR(45));")
+    c.execute("CREATE TABLE IF NOT EXISTS Temp ( playerID INT, playerEmail VARCHAR(45) );")
     
     conn.commit()
     conn.close()

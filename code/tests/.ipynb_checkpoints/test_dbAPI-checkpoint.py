@@ -60,6 +60,8 @@ class dbAPITestCase(unittest.TestCase):
             dbAPI.create([])
         with self.assertRaises(ValueError, msg="The database file name given is not a valid option (list)"):
             dbAPI.create(['a','b','c'])
+        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (empty string)"):
+            dbAPI.create('')
         
         # Testing the table creation in the setUp database
         global db_filename
@@ -67,7 +69,8 @@ class dbAPITestCase(unittest.TestCase):
         c = conn.cursor()
         c.execute("SELECT name FROM sqlite_master WHERE type='table';")
         tables = c.fetchall()
-            
+        
+        # Check that the needed tables are created and named properly
         assert tables[0][0] == "Players"
         assert tables[1][0] == "Scores"
         assert tables[2][0] == "Temp"
