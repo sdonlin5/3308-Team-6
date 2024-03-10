@@ -6,7 +6,7 @@ Players embark on a space adventure as the captain of a spaceship, accumulating 
 
 ### Basic Player Controls
 - W (↑): Move up
-- A (←): (Not usable)
+- A (←): (Not usable. Because the screen automatically scrolls from right to left.)
 - S (↓): Move down
 - D (→): Accelerate to the right
 - Space key: Attack to an enemy
