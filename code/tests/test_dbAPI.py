@@ -1,10 +1,12 @@
+
 """
-This is the unit tests for the datasbase API for the Team Six Project
+These are the unit tests for the datasbase API used in the Team Six Project 
 Last Modifeied: 3/10/2024 By: Patrick Sharp
 """
 
-
+# Imports
 import sqlite3
+from datetime import datetime
 import unittest
 import os
 import sys
@@ -42,39 +44,135 @@ class dbAPITestCase(unittest.TestCase):
         except:
             print("Error deleting test database")
             
-    
-    
+            
+            
+            
     """
     This test checks for input errors in the database filename, starting off with ValueTypeErrors
-    Author: Patrick Sharp
+    This test also checks that the function works as intended
+    Author(s): Patrick Sharp
     Last Modified: 3/10/2024
     """
     def test_create(self):
-        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (None)"):
-            dbAPI.create(None)
-        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (int)"):
-            dbAPI.create(7)
-        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (float)"):
-            dbAPI.create(3.12)
-        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (empty list)"):
-            dbAPI.create([])
-        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (list)"):
-            dbAPI.create(['a','b','c'])
-        with self.assertRaises(ValueError, msg="The database file name given is not a valid option (empty string)"):
-            dbAPI.create('')
         
-        # Testing the table creation in the setUp database
         global db_filename
+        
+        # Test to check for a valid db_filename data types
+        invalid_db_filename_data_types = [
+            None,
+            '',
+            7,
+            3.14,
+            [],
+            ['db_filename'],
+            {'db_filename':0}
+        ]
+        
+        for dataType in invalid_db_filename_data_types:
+            with self.assertRaises(ValueError, msg="The database file name given is not a valid option"):
+                dbAPI.create(dataType)
+            
+        # Test the function returns sucsessfully when given a valid db_filename
+        assert (dbAPI.create(db_filename)) == 0, "The create() function failed (did not return a value of 0)"
+        
+        # Testing the table creation in the global test database
         conn = sqlite3.connect(db_filename)
         c = conn.cursor()
         c.execute("SELECT name FROM sqlite_master WHERE type='table';")
         tables = c.fetchall()
         
         # Check that the needed tables are created and named properly
-        assert tables[0][0] == "Players"
-        assert tables[1][0] == "Scores"
-        assert tables[2][0] == "Temp"
+        assert tables[0][0] == "Players", "The create() function did not make a Players table"
+        assert tables[1][0] == "Scores", "The create() function did not make Scores table"
+        assert tables[2][0] == "Temp", "The create() function did not make a Temp table"
+    
+    
+    
+    
+    
+    """
+    This test checks for input errors in the database filename, playerId, and/or score. 
+    This test also checks that the function works as intended
+    Author(s): Patrick Sharp
+    Last Modified: 3/10/2024
+    """
+    def test_addScore(self):
+        
+        global db_filename
+        playerID = 1
+        score = 420
+        
+        # Test to check for a valid db_filename data types
+        invalid_db_filename_data_types = [
+            None,
+            '',
+            7,
+            3.14,
+            [],
+            ['db_filename'],
+            {'db_filename':0}
+        ]
+        
+        for dataType in invalid_db_filename_data_types:
+            with self.assertRaises(ValueError, msg="The database file name given is not a valid option"):
+                dbAPI.addScore(dataType, playerID, score)
+            
+        # Test tocheck that the playerID is a valid data type (int > 0)
+        invalid_playerIDs = [
+            None,
+            '',
+            'playerID',
+            3.14,
+            [],
+            ['playerID'],
+            [1],
+            0,
+            -1,
+            {'playerID':1}
+        ]
+        
+        for dataType in invalid_playerIDs:
+            with self.assertRaises(ValueError, msg="The playerID given is not a valid option"):
+                dbAPI.addScore(db_filename, dataType, score)
+            
+        # Test to check that the score is a valid data type (int > 0)
+        # NOTE: MIGHT WANT TO STORE A SCORE OF ZERO SO REMOVE THAT IF THAT"S THE CASE
+        invalid_score = [
+            None,
+            '',
+            '777',
+            0,
+            -1,
+            [],
+            [777],
+            {'score':7777}
+        ]
+        
+        for dataType in invalid_playerIDs:
+            with self.assertRaises(ValueError, msg="The score given is not a valid option"):
+                dbAPI.addScore(db_filename, playerID, dataType)
+                
+        
+        # Test the function returns sucsessfully when given a valid db_filename
+        assert (dbAPI.addScore(db_filename, playerID, score)) == 0, "The addScore() function failed (did not return a value of 0)"
+        
+        # Grab the date that should be appened to the Scores table from the call above
+        date = str(datetime.now())
+        date = date[0:10] 
+        
+        # Testing if the addScores function used above inserted the supplied values to the Scores table
+        conn = sqlite3.connect(db_filename)
+        c = conn.cursor()
+        c.execute("SELECT * FROM Scores;")
+        tables = c.fetchall()
+        
+        assert c[-1][0] == 1, "The addScores() function did not append the values to the Scores table with the supplied playerID"
+        assert c[-1][1] == 420, "The addScores() function did not append the values to the Scores table with the supplied score"
+        assert c[-1][2] == date, "The addScores() function did not append the values to the Scores table with the supplied date"
+        
+
+            
             
             
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()    
