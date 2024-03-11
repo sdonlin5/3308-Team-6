@@ -28,6 +28,7 @@ Prepare multiple spaceships with varying durability, attack power, attack range,
 - Spaceship C: Low durability, high-speed movement.
 
 ### Items
+Buff, Debuff - Status effect
 - Weapons: Missiles, lasers, etc.
 - Shield: 10-second shield, etc.
 - Repair Kit: Recovers health points.
