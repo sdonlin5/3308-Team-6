@@ -114,7 +114,7 @@ class dbAPITestCase(unittest.TestCase):
         ]
         
         for dataType in invalid_db_filename_data_types:
-            with self.assertRaises(ValueError, msg="The database file name given is not a valid option"):
+            with self.assertRaises(ValueError, msg="The database file name given is not a valid option: {}".format(dataType)):
                 dbAPI.addScore(dataType, playerID, score)
             
         # Test tocheck that the playerID is a valid data type (int > 0)
@@ -132,7 +132,7 @@ class dbAPITestCase(unittest.TestCase):
         ]
         
         for dataType in invalid_playerIDs:
-            with self.assertRaises(ValueError, msg="The playerID given is not a valid option"):
+            with self.assertRaises(ValueError, msg="The playerID given is not a valid option: {}".format(dataType)):
                 dbAPI.addScore(db_filename, dataType, score)
             
         # Test to check that the score is a valid data type (int > 0)
@@ -149,7 +149,7 @@ class dbAPITestCase(unittest.TestCase):
         ]
         
         for dataType in invalid_playerIDs:
-            with self.assertRaises(ValueError, msg="The score given is not a valid option"):
+            with self.assertRaises(ValueError, msg="The score given is not a valid option: {}".format(dataType)):
                 dbAPI.addScore(db_filename, playerID, dataType)
                 
         
@@ -166,9 +166,9 @@ class dbAPITestCase(unittest.TestCase):
         c.execute("SELECT * FROM Scores;")
         tables = c.fetchall()
         
-        assert c[-1][0] == 1, "The addScores() function did not append the values to the Scores table with the supplied playerID"
-        assert c[-1][1] == 420, "The addScores() function did not append the values to the Scores table with the supplied score"
-        assert c[-1][2] == date, "The addScores() function did not append the values to the Scores table with the supplied date"
+        assert tables[-1][0] == 1, "The addScores() function did not append the values to the Scores table with the supplied playerID"
+        assert tables[-1][1] == 420, "The addScores() function did not append the values to the Scores table with the supplied score"
+        assert tables[-1][2] == date, "The addScores() function did not append the values to the Scores table with the supplied date"
         
 
             

@@ -44,7 +44,20 @@ Last Mofdified: 3/11/2024
 """
 def addScore(db_filename: str, playerID: int, score: int):
     
+    if type(db_filename) is not str or not db_filename:
+        raise ValueError
+    if type(playerID) is not int or playerID <= 0:
+        raise ValueError
+    if type(score) is not int or score <= 0:
+        raise ValueError
+    
     # Grab the date and make it a string in the yyyy-mm-dd format
     date = str(datetime.now())
-    date = date[0:10] 
-    return None
+    date = date[0:10]
+    
+    conn = sqlite3.connect(db_filename)
+    c = conn.cursor()
+    c.execute("INSERT INTO Scores VALUES (?, ?, ?);", (playerID, score, date))
+    conn.commit()
+    conn.close()
+    return 0
