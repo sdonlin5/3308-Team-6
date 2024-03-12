@@ -84,7 +84,7 @@ class dbAPITestCase(unittest.TestCase):
         # Check that the needed tables are created and named properly
         assert tables[0][0] == "Players", "The create() function did not make a Players table"
         assert tables[1][0] == "Scores", "The create() function did not make Scores table"
-        assert tables[2][0] == "Temp", "The create() function did not make a Temp table"
+        assert tables[2][0] == "Games", "The create() function did not make a Games table"
     
     
     

@@ -24,10 +24,40 @@ def create(db_filename: str):
 
     # The date will be stored as an VARCHAR in yy-mm-dd format
     # date will come from datetime.now() and only save the yyyy-mm-dd format as a string
-    c.execute("CREATE TABLE IF NOT EXISTS Players (playerID INT, playerName VASRCHAR(3), lastLoginDate VARCHAR(10) );")
-    c.execute("CREATE TABLE IF NOT EXISTS Scores (playerID INT, score INT, date VARCHAR(10) );")
-    c.execute("CREATE TABLE IF NOT EXISTS Temp (playerID INT, playerEmail VARCHAR(45) );")
     
+    create_players_table =  """
+                               CREATE TABLE IF NOT EXISTS Players
+                               (playerID INT,
+                                playerName CHAR(3),
+                                lastLoginDate VARCHAR(10),
+                                playerEmail VARCHAR(45)
+                               );
+                            """
+    c.execute(create_players_table)
+    
+    
+    create_scores_table =  """
+                               CREATE TABLE IF NOT EXISTS Scores
+                               (playerID INT,
+                               score INT,
+                               date VARCHAR(10)
+                               );
+                            """ 
+    c.execute(create_scores_table)
+    
+    
+    create_scores_table =  """
+                               CREATE TABLE IF NOT EXISTS Games
+                               (playerID INT,
+                               time INT,
+                               distance REAL,
+                               date VARCHAR(10),
+                               gameID INT
+                               );
+                            """
+    c.execute(create_scores_table)
+    
+     
     conn.commit()
     conn.close()
     return 0
