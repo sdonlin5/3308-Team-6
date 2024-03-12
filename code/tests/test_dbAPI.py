@@ -107,7 +107,7 @@ class dbAPITestCase(unittest.TestCase):
         playerID = 1
         score = 420
         
-        # Grab the date that should be appened to the Scores table from the call above
+        # Grab the date that should be appened to the Scores table from the call above YYYY-MM-DD format
         date = str(datetime.now())
         date = date[0:10] 
         

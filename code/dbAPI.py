@@ -87,7 +87,7 @@ def addScore(db_filename: str, playerID: int, score: int):
     if type(score) is not int or score <= 0:
         raise ValueError
     
-    # Grab the date 
+    # Grab the date YYYY-MM-DD format
     date = str(datetime.now())
     date = date[0:10] 
     
