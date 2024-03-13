@@ -2,7 +2,7 @@
 
 ## Page Description:
 This will be the home screen or main menu of our project. It will be the hub for accessing other pages.
-<img src = 'Weekly_Status/images/index mockup.png' >
+<img src = 'images/index mockup.png' >
 
 ## Parameters for the page:
 1. My Best Score Button
@@ -40,7 +40,7 @@ This will be the home screen or main menu of our project. It will be the hub for
 
 ## Page Description:
 This page will contain all the information regarding the rules of the game. It will also have a back to menu button to allow players to return to the main menu after reading the rules.
-<img src = 'Weekly_Status/images/gamerules mockup.png'>
+<img src = 'images/gamerules mockup.png'>
 
 ## Parameters for the Page
 1. Return to menu button
@@ -62,3 +62,70 @@ This page will contain all the information regarding the rules of the game. It w
 3. Cross-Browser Testing - Each page will be checked in different browsers to ensure that they are rendering correctly
 4. Responsive Testing - Each page will be checked on browsers/devices of different screen sizes
 5. Regression Testing - Each time new elements are added or modified on the page, it will undergo all previous tests
+
+
+# Page Title: Leaderboard (leaderboard.html)
+
+## Page Description
+This page features the top ten scores from around the globe, providing players with a glimpse of the current top achievers and the scores they need to beat to claim the number one spot. Check back regularly to stay updated and challenge yourself to reach the pinnacle of the leaderboard!
+
+<img src='images/Leaderboard_page_snip.png'>
+
+
+## Parameters for the Page
+1. Return to menu button
+2. Top ten scores
+3. Title of the page
+
+## Data Needed to Render Page:
+1. Layout information - Alignment and spacing for rule containers
+2. Color information - background, buttons, rule containers
+3. Sub-query to get the top ten scores from DB
+4. Anchor button style information
+
+## Link Destinations:
+1. Back to Menu Button -> Game Home (index.html) Returns the user to the main menu
+
+## Tests to Verify Rendering
+1. Visual Regression Testing: Use tools like BackstopJS, Percy, or Applitools to capture screenshots of your web page and compare them against a baseline to identify visual differences.
+2. Manual Testing: Manually inspect the rendered page across different browsers and devices to ensure consistency and correctness.
+3. Automated Browser Testing: Use tools like Selenium, Puppeteer, or Playwright to automate the testing process across different browsers and devices, checking for rendering issues.
+4. Accessibility Testing: Use tools like Axe or Lighthouse to test the web page for accessibility issues, ensuring it renders correctly for users with disabilities.
+5. Performance Testing: Use tools like Lighthouse or WebPageTest to evaluate the page's performance, including rendering speed, to ensure a smooth user experience.
+6. Cross-Browser Compatibility Testing: Test the web page on different browsers (Chrome, Firefox, Safari, Edge, etc.) and devices (desktop, mobile) to ensure consistent rendering.
+7. Responsive Design Testing: Use tools like Responsive Design Mode in browsers or BrowserStack to test how the page renders on different screen sizes and resolutions.
+API Testing: use tools like Postman or Swagger to test the API endpoints for correct responses.
+
+
+
+# Page Title: My Best Scores (leaderboard.html)
+
+## Page Description
+This page features the top ten scores from around the globe, providing players with a glimpse of the current top achievers and the scores they need to beat to claim the number one spot. Check back regularly to stay updated and challenge yourself to reach the pinnacle of the leaderboard!
+
+<img src='images/myBestScore_page_snip.png'>
+
+
+## Parameters for the Page
+1. Return to menu button
+2. Top ten scores for the desired player
+3. Title of the page
+
+## Data Needed to Render Page:
+1. Layout information - Alignment and spacing for rule containers
+2. Color information - background, buttons, rule containers
+3. Sub-query to get the top ten scores from DB
+4. Anchor button style information
+
+## Link Destinations:
+1. Back to Menu Button -> Game Home (index.html) Returns the user to the main menu
+
+## Tests to Verify Rendering
+1. Visual Regression Testing: Use tools like BackstopJS, Percy, or Applitools to capture screenshots of your web page and compare them against a baseline to identify visual differences.
+2. Manual Testing: Manually inspect the rendered page across different browsers and devices to ensure consistency and correctness.
+3. Automated Browser Testing: Use tools like Selenium, Puppeteer, or Playwright to automate the testing process across different browsers and devices, checking for rendering issues.
+4. Accessibility Testing: Use tools like Axe or Lighthouse to test the web page for accessibility issues, ensuring it renders correctly for users with disabilities.
+5. Performance Testing: Use tools like Lighthouse or WebPageTest to evaluate the page's performance, including rendering speed, to ensure a smooth user experience.
+6. Cross-Browser Compatibility Testing: Test the web page on different browsers (Chrome, Firefox, Safari, Edge, etc.) and devices (desktop, mobile) to ensure consistent rendering.
+7. Responsive Design Testing: Use tools like Responsive Design Mode in browsers or BrowserStack to test how the page renders on different screen sizes and resolutions.
+API Testing: use tools like Postman or Swagger to test the API endpoints for correct responses.
