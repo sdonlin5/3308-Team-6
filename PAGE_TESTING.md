@@ -129,3 +129,39 @@ This page features the top ten scores from around the globe, providing players w
 6. Cross-Browser Compatibility Testing: Test the web page on different browsers (Chrome, Firefox, Safari, Edge, etc.) and devices (desktop, mobile) to ensure consistent rendering.
 7. Responsive Design Testing: Use tools like Responsive Design Mode in browsers or BrowserStack to test how the page renders on different screen sizes and resolutions.
 API Testing: use tools like Postman or Swagger to test the API endpoints for correct responses.
+
+
+
+
+# Page Title: Setting (setting.html)
+
+## Page Description:
+This setting interface presents tools for user feedback, essential application details, and outlines service agreements and privacy commitments.
+<img src = 'images/setting1_page.png' >
+<img src = 'images/setting2_page.png' >
+
+## Parameters for the page:
+1. Title of the page
+2. User input from feedback from
+3. FAQs
+4. Brief description of the application
+5. Information of version and update
+6. Terms and condition document
+7. Privacy policy document (If necessary)
+8. Return to menu button
+
+## Data Needed to Render Page:
+1. 
+
+## Link Destinations:
+1. Back to Menu Button -> Game Home (index.html) Returns the user to the main menu
+
+## Tests to Verify Rendering
+1. 
+
+
+
+
+
+
+
