@@ -151,17 +151,17 @@ This setting interface presents tools for user feedback, essential application d
 8. Return to menu button
 
 ## Data Needed to Render Page:
-1. 
+1. Layout information - form and text
+2. Color information - background, button, form, text
+3. Content - Text for FAQs, brief description of the application, version and update, terms and condition, and privacy policy
+4. Button style information
 
 ## Link Destinations:
 1. Back to Menu Button -> Game Home (index.html) Returns the user to the main menu
 
 ## Tests to Verify Rendering
-1. 
-
-
-
-
-
-
-
+1. Visual Testing: Manually check each section (Help, Basic Information, Service Terms) on the settings page on my browser for consistency.
+2. Functional Testing: Test the functionality of the feedback form 'SEND' button in different browsers to ensure it submits data as intended. Verify that the 'BACK TO THE MENU' button returns to the main menu in each browser.
+3. Cross-Browser Testing: Check the settings page in different browsers (Chrome, Safari, Edge, etc.) to ensure elements like the column layout and buttons render correctly.
+Responsive Testing: Ensure the settings page layout is responsive and appears correctly on various devices and screen sizes, particularly the alignment and readability of the texts.
+4. Regression Testing: After any updates or changes to the page, such as text updates or layout adjustments, retest to confirm that previous functionalities remain intact and visual consistency is maintained.
