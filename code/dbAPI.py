@@ -8,6 +8,7 @@ Last Modifeied: 3/10/2024 By: Patrick Sharp
 # Imports
 import sqlite3
 from datetime import datetime
+import re
 
 
 
@@ -31,7 +32,7 @@ def create(db_filename: str):
     
     create_players_table =  """
                                CREATE TABLE IF NOT EXISTS Players
-                               (playerID INT,
+                               (playerID INT NOT NULL PRIMARY KEY,
                                 playerName CHAR(3),
                                 lastLoginDate VARCHAR(10),
                                 playerEmail VARCHAR(45)
@@ -44,7 +45,8 @@ def create(db_filename: str):
                                CREATE TABLE IF NOT EXISTS Scores
                                (playerID INT,
                                score INT,
-                               date CHAR(10)
+                               date CHAR(10),
+                               gameID INT NOT NULL PRIMARY KEY
                                );
                             """ 
     c.execute(create_scores_table)
@@ -56,7 +58,7 @@ def create(db_filename: str):
                                time INT,
                                distance REAL,
                                date VARCHAR(10),
-                               gameID INT
+                               gameID INT NOT NULL PRIMARY KEY
                                );
                             """
     c.execute(create_games_table)
@@ -105,3 +107,15 @@ def addScore(db_filename: str, playerID: int, score: int):
     conn.commit()
     conn.close()
     return 0
+
+
+def addPlayer(playerName, playerEmail):
+    
+    # Grab the date YYYY-MM-DD format
+    date = str(datetime.now())
+    date = date[0:10]
+    
+    # Regex to check for valid email input
+    emailRegex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+    
+    return None

@@ -174,10 +174,85 @@ class dbAPITestCase(unittest.TestCase):
         
         assert tables[-1][0] == 1, "The addScores() function did not append the values to the Scores table with the supplied playerID"
         assert tables[-1][1] == 420, "The addScores() function did not append the values to the Scores table with the supplied score"
-        assert tables[-1][2] == date, "The addScores() function did not append the values to the Scores table with the supplied date"
+        assert tables[-1][2] == date, "The addScores() function did not append the values to the Scores table with the supplied date"      
+
         
         
+    """
+    This test checks for input errors in the playerName and/or playerEmail in the addPlayer() function. 
+    This test also checks that the function works as intended
+    Author(s): Patrick Sharp
+    Last Modified: 3/16/2024
+    """       
+    def test_addPlayer(self):
+        
+        playerName = 'ABC'
+        playerEmail = 'test@gmail.com'
+        
+        # Grab the date that should be appened to the Scores table from the call above YYYY-MM-DD format
+        date = str(datetime.now())
+        date = date[0:10] 
+        
+        # Test to check for a valid playerName data types and inputs (str w/ len() == 3)
+        # NOTE: MIGHT NEED TO CHANGE THIS TEST TO CHECK FOR VALID CHARACTERS IN NAME ONCE ESTABLISHED
+        invalid_playerName_types = [
+            None,
+            'ABCD',
+            '',
+            7,
+            3.14,
+            [],
+            ['ABC'],
+            {'ABC':0}
+        ]
+        
+        for dataType in invalid_playerName_types:
+            with self.assertRaises(ValueError, msg="The player name given is not a valid option: {}".format(dataType)):
+                dbAPI.addPlayer(dataType,playerEmail)
         
         
+        # Test to check for a valid playerEmail data types and inputs (valid email)
+        invalid_playerEmail_types = [
+            None,
+            'ABCD',
+            'TestEmailGmail.com',
+            'user@invalid-tld.123',
+            'user#domain.com',
+            'user#domain.con',
+            'user&name@email-provider.net',
+            'spaced user@domain.info',
+            'double..dots@email.org',
+            '@.com',
+            'user@domain with space.com',
+            'user@domain..com',
+            '',
+            7,
+            3.14,
+            [],
+            ['ABC'],
+            {'ABC':0}
+        ]
+        
+        for dataType in invalid_playerName_types:
+            with self.assertRaises(ValueError, msg="The player email given is not a valid option: {}".format(dataType)):
+                dbAPI.addPlayer(playerName,dataType)
+                
+        # Test the function returns sucsessfully when given a valid db_filename
+        assert (dbAPI.addScore(playerName, playerEmail)) == 0, "The addPlayer() function failed (did not return a value of 0)"
+        
+        
+        # Testing if the addScores function used above inserted the supplied values to the Scores table
+        conn = sqlite3.connect(db_filename)
+        c = conn.cursor()
+        c.execute("SELECT * FROM Players;")
+        tables = c.fetchall()
+        assert tables[-1][0] == len(tables), "The addPlayer() function did not append the values to the Players table with the supplied playerID"
+        assert tables[-1][1] == playerName, "The addPlayer() function did not append the values to the Players table with the supplied player name"
+        assert tables[-1][2] == date, "The addPlayer() function did not append the values to the Players table with the current date"  
+        assert tables[-1][3] == playerEmail, "The addPlayer() function did not append the values to the Players table with the supplied Email"
+                
+
+    
+    
 if __name__ == '__main__':
     unittest.main()    
