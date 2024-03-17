@@ -1,7 +1,7 @@
 
 """
 This is the datasbase API for the Team Six Project
-Last Modifeied: 3/10/2024 By: Patrick Sharp
+Last Modifeied: 3/17/2024 By: Patrick Sharp
 """
 
 
@@ -18,7 +18,7 @@ import re
 @Return 0, Void Function, But returns 0 when working successfully
 This function will connect to the database file given to create Player, Scores, and ___ tables if they do not exist already
 Author(s): Patrick Sharp
-Last Mofdified: 3/10/2024
+Last Mofdified: 3/15/2024
 """
 def create(db_filename: str):
     if type(db_filename) is not str or not db_filename:
@@ -78,7 +78,7 @@ def create(db_filename: str):
 @Return 0, Void Function, But returns 0 when working successfully
 This function will connect to the database file given to add a players score to the Scores table in the DB
 Author(s): Patrick Sharp
-Last Mofdified: 3/11/2024
+Last Mofdified: 3/15/2024
 """
 def addScore(db_filename: str, playerID: int, score: int):
     
@@ -109,17 +109,27 @@ def addScore(db_filename: str, playerID: int, score: int):
     return 0
 
 
+
+"""
+@Parm db_filename: Name of the database file to open or create
+@Parm playerName: The player name used for storing scores
+@Parm playerEmail: Email of the player
+@Return 0, Void Function, But returns 0 when working successfully
+This function will connect to the database file given to add a player to the Players table in the DB
+Author(s): Patrick Sharp
+Last Mofdified: 3/17/2024
+"""
 def addPlayer(db_filename: str, playerName: str, playerEmail: str):
     
     # Grab the date YYYY-MM-DD format
     date = str(datetime.now())
     date = date[0:10]
     
-    # Regex to check for valid email input
-    emailRegex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
-    
     if type(playerName) is not str or len(playerName) != 3:
         raise ValueError
+    
+    # Regex to check for valid email input
+    emailRegex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
     
     if  type(playerEmail) is not str or not (re.match(emailRegex, playerEmail)):
         raise ValueError

@@ -1,7 +1,7 @@
 
 """
 These are the unit tests for the datasbase API used in the Team Six Project 
-Last Modifeied: 3/10/2024 By: Patrick Sharp
+Last Modifeied: 3/17/2024 By: Patrick Sharp
 """
 
 
@@ -56,7 +56,7 @@ class dbAPITestCase(unittest.TestCase):
     This test checks for input errors in the database filename, starting off with ValueTypeErrors
     This test also checks that the function works as intended
     Author(s): Patrick Sharp
-    Last Modified: 3/10/2024
+    Last Modified: 3/15/2024
     """
     def test_create(self):
         
@@ -99,7 +99,7 @@ class dbAPITestCase(unittest.TestCase):
     This test checks for input errors in the database filename, playerId, and/or score. 
     This test also checks that the function works as intended
     Author(s): Patrick Sharp
-    Last Modified: 3/10/2024
+    Last Modified: 3/15/2024
     """
     def test_addScore(self):
         
