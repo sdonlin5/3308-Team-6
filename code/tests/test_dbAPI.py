@@ -186,6 +186,7 @@ class dbAPITestCase(unittest.TestCase):
     """       
     def test_addPlayer(self):
         
+        global db_filename
         playerName = 'ABC'
         playerEmail = 'test@gmail.com'
         
@@ -208,7 +209,7 @@ class dbAPITestCase(unittest.TestCase):
         
         for dataType in invalid_playerName_types:
             with self.assertRaises(ValueError, msg="The player name given is not a valid option: {}".format(dataType)):
-                dbAPI.addPlayer(dataType,playerEmail)
+                dbAPI.addPlayer(db_filename,dataType,playerEmail)
         
         
         # Test to check for a valid playerEmail data types and inputs (valid email)
@@ -235,10 +236,10 @@ class dbAPITestCase(unittest.TestCase):
         
         for dataType in invalid_playerName_types:
             with self.assertRaises(ValueError, msg="The player email given is not a valid option: {}".format(dataType)):
-                dbAPI.addPlayer(playerName,dataType)
+                dbAPI.addPlayer(db_filename,playerName,dataType)
                 
         # Test the function returns sucsessfully when given a valid db_filename
-        assert (dbAPI.addScore(playerName, playerEmail)) == 0, "The addPlayer() function failed (did not return a value of 0)"
+        assert (dbAPI.addPlayer(db_filename,playerName, playerEmail)) == 0, "The addPlayer() function failed (did not return a value of 0)"
         
         
         # Testing if the addScores function used above inserted the supplied values to the Scores table

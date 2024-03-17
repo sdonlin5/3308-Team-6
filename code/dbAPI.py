@@ -32,7 +32,7 @@ def create(db_filename: str):
     
     create_players_table =  """
                                CREATE TABLE IF NOT EXISTS Players
-                               (playerID INT NOT NULL PRIMARY KEY,
+                               (playerID INTEGER PRIMARY KEY,
                                 playerName CHAR(3),
                                 lastLoginDate VARCHAR(10),
                                 playerEmail VARCHAR(45)
@@ -45,8 +45,8 @@ def create(db_filename: str):
                                CREATE TABLE IF NOT EXISTS Scores
                                (playerID INT,
                                score INT,
-                               date CHAR(10),
-                               gameID INT NOT NULL PRIMARY KEY
+                               date CHAR(10), 
+                               gameID INTEGER PRIMARY KEY
                                );
                             """ 
     c.execute(create_scores_table)
@@ -58,7 +58,7 @@ def create(db_filename: str):
                                time INT,
                                distance REAL,
                                date VARCHAR(10),
-                               gameID INT NOT NULL PRIMARY KEY
+                               gameID INT
                                );
                             """
     c.execute(create_games_table)
@@ -97,7 +97,7 @@ def addScore(db_filename: str, playerID: int, score: int):
     conn = sqlite3.connect(db_filename)
     c = conn.cursor()
     addScores = f"""
-                INSERT INTO Scores VALUES
+                INSERT INTO Scores (playerID, score, date) VALUES
                 ({playerID},
                  {score},
                  '{date}'
@@ -109,7 +109,7 @@ def addScore(db_filename: str, playerID: int, score: int):
     return 0
 
 
-def addPlayer(playerName, playerEmail):
+def addPlayer(db_filename: str, playerName: str, playerEmail: str):
     
     # Grab the date YYYY-MM-DD format
     date = str(datetime.now())
@@ -118,4 +118,24 @@ def addPlayer(playerName, playerEmail):
     # Regex to check for valid email input
     emailRegex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
     
-    return None
+    if type(playerName) is not str or len(playerName) != 3:
+        raise ValueError
+    
+    if  type(playerEmail) is not str or not (re.match(emailRegex, playerEmail)):
+        raise ValueError
+    
+    conn = sqlite3.connect(db_filename)
+    c = conn.cursor()
+    
+    
+    addPlayer = f"""
+                INSERT INTO Players (playerName, lastLoginDate, playerEmail) VALUES
+                ('{playerName}',
+                 '{date}',
+                 '{playerEmail}'
+                );
+               """
+    c. execute(addPlayer)
+    conn.commit()
+    conn.close()
+    return 0
