@@ -50,3 +50,30 @@
 - Gameplay Code: PLayer name input and screen scaling
 - Gameplay Design
 - Sprites and Creative Game Design
+
+
+
+<img src="images/240318_01.png"
+     alt="ScreenShot issue"
+     style="float: left; margin-right: 10px;" />
+
+<img src="images/240318_02.png"
+     alt="ScreenShot issue"
+     style="float: left; margin-right: 10px;" />
+
+<img src="images/240318_03.png"
+     alt="ScreenShot issue"
+     style="float: left; margin-right: 10px;" />
+
+## Finished Work
+- Spaceship spirtes
+- addPlayer() function for SQL DB w/ Tests
+- Settings/Credits page
+
+
+## Work-in-Progress
+- Sprites
+- SQL: UnitTests and API
+- Gameplay Code: RNG, Score Items, and player name input
+- Gameplay Design
+- Creative Game Design
