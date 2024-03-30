@@ -19,15 +19,15 @@ gameID (INT): The unique identifier for the game.
 
 Use case:
 
-   Verify the scores and player info is being added to the table properly
+&nbsp;&nbsp;&nbsp;&nbsp;Verify the scores and player info is being added to the table properly
 
 Description: 
 
-   Test the addScore() function in the dbAPI
+   &nbsp;&nbsp;&nbsp;&nbsp;Test the addScore() function in the dbAPI
 
 Pre-conditions: 
 
-   The test is using a valid playerID, playerName, score, and gameID
+   &nbsp;&nbsp;&nbsp;&nbsp;The test is using a valid playerID, playerName, score, and gameID
 
 Test Steps:
     
@@ -38,33 +38,33 @@ Test Steps:
     
 Expected Result: 
 
-   The added score should match the retrieved score.
+   &nbsp;&nbsp;&nbsp;&nbsp;The added score should match the retrieved score.
     
 Actual Result: 
 
-   The added playerId, playerName, score, date, and gameID matches the retrieved values.
+   &nbsp;&nbsp;&nbsp;&nbsp;The added playerId, playerName, score, date, and gameID matches the retrieved values.
     
 Status: 
 
-   Pass.
+   &nbsp;&nbsp;&nbsp;&nbsp;Pass.
     
 Notes: 
 
-   N/A.
+   &nbsp;&nbsp;&nbsp;&nbsp;N/A.
     
 #### Get Top Ten Scores Test
 
 Use case:
 
-   Verify that the getTOpTenScores() grabs the top ten scores from the table.
+   &nbsp;&nbsp;&nbsp;&nbsp;Verify that the getTopTenScores() grabs the top ten scores from the table.
 
 Description: 
 
-   Test getTOpTenScores() function.
+   &nbsp;&nbsp;&nbsp;&nbsp;Test getTopTenScores() function.
     
 Pre-conditions: 
 
-   We are using a valid playerID and playerName.
+   &nbsp;&nbsp;&nbsp;&nbsp;We are using a valid playerID and playerName.
     
 Test Steps:
 
@@ -74,16 +74,16 @@ Test Steps:
     
 Expected Result:
 
-   The retrieved scores should be the top ten scores based on the score value.
+   &nbsp;&nbsp;&nbsp;&nbsp;The retrieved scores should be the top ten scores based on the score value.
     
 Actual Result: 
 
-   The retrieved scores are the top ten scores based on fro the list of scores.
+   &nbsp;&nbsp;&nbsp;&nbsp;The retrieved scores are the top ten scores based on fro the list of scores.
     
 Status: 
 
-   Pass.
+   &nbsp;&nbsp;&nbsp;&nbsp;Pass.
     
 Notes:
 
-   N/A
+   &nbsp;&nbsp;&nbsp;&nbsp;N/A
