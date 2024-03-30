@@ -267,7 +267,8 @@ class dbAPITestCase(unittest.TestCase):
 
     
     def test_getTopTenScores(self):
-
+        
+        # Info to insert into the Scores table to query for the test 
         global db_filename
         playerID = 1
         playerName = 'TST'
@@ -292,12 +293,17 @@ class dbAPITestCase(unittest.TestCase):
             3
         ]
         
+        # Add the scores to the table
         for score in scores:
             dbAPI.addScore(db_filename, playerID, playerName, score)
         
+        # Sort the scores using the python sort function to ease the assert comparrisons
         scores.sort()
+        
+        #Grab the score from the function
         topTen = dbAPI.getTopTenScores(db_filename)
         
+        #check that the top ten scores are given in descending order
         assert topTen[0][2] == scores[-1]
         assert topTen[1][2] == scores[-2]
         assert topTen[2][2] == scores[-3]
