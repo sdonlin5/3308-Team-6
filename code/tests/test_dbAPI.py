@@ -24,8 +24,6 @@ import dbAPI
 db_filename = 'testDB'
 
 
-
-
 class dbAPITestCase(unittest.TestCase):
 
     @classmethod
@@ -68,7 +66,6 @@ class dbAPITestCase(unittest.TestCase):
             '',
             7,
             3.14,
-            [],
             ['db_filename'],
             {'db_filename':0}
         ]
@@ -105,6 +102,7 @@ class dbAPITestCase(unittest.TestCase):
         
         global db_filename
         playerID = 1
+        playerName = 'ABC'
         score = 420
         
         # Grab the date that should be appened to the Scores table from the call above YYYY-MM-DD format
@@ -117,14 +115,13 @@ class dbAPITestCase(unittest.TestCase):
             '',
             7,
             3.14,
-            [],
             ['db_filename'],
             {'db_filename':0}
         ]
         
         for dataType in invalid_db_filename_data_types:
             with self.assertRaises(ValueError, msg="The database file name given is not a valid option: {}".format(dataType)):
-                dbAPI.addScore(dataType, playerID, score)
+                dbAPI.addScore(dataType, playerID, playerName, score)
             
         # Test tocheck that the playerID is a valid data type (int > 0)
         invalid_playerIDs = [
@@ -132,7 +129,6 @@ class dbAPITestCase(unittest.TestCase):
             '',
             'playerID',
             3.14,
-            [],
             ['playerID'],
             [1],
             0,
@@ -142,7 +138,23 @@ class dbAPITestCase(unittest.TestCase):
         
         for dataType in invalid_playerIDs:
             with self.assertRaises(ValueError, msg="The playerID given is not a valid option: {}".format(dataType)):
-                dbAPI.addScore(db_filename, dataType, score)
+                dbAPI.addScore(db_filename, dataType, playerName, score)
+                
+                
+        # Test tocheck that the playerName is a valid data type len() == 3
+        invalid_playerName_types = [
+            None,
+            'ABCD',
+            '',
+            7,
+            3.14,
+            ['ABC'],
+            {'ABC':0}
+        ]
+        
+        for dataType in invalid_playerName_types:
+            with self.assertRaises(ValueError, msg="The playerName given is not a valid option: {}".format(dataType)):
+                dbAPI.addScore(db_filename, playerID, dataType, score)
             
         # Test to check that the score is a valid data type (int > 0)
         # NOTE: MIGHT WANT TO STORE A SCORE OF ZERO SO REMOVE THAT IF THAT"S THE CASE
@@ -152,18 +164,18 @@ class dbAPITestCase(unittest.TestCase):
             '777',
             0,
             -1,
-            [],
             [777],
-            {'score':7777}
+            {'score':7777},
+            (777)
         ]
         
         for dataType in invalid_playerIDs:
             with self.assertRaises(ValueError, msg="The score given is not a valid option: {}".format(dataType)):
-                dbAPI.addScore(db_filename, playerID, dataType)
+                dbAPI.addScore(db_filename, playerID, playerName, dataType)
                 
         
         # Test the function returns sucsessfully when given a valid db_filename
-        assert (dbAPI.addScore(db_filename, playerID, score)) == 0, "The addScore() function failed (did not return a value of 0)"
+        assert (dbAPI.addScore(db_filename, playerID, playerName, score)) == 0, "The addScore() function failed (did not return a value of 0)"
         
         
         # Testing if the addScores function used above inserted the supplied values to the Scores table
@@ -173,8 +185,9 @@ class dbAPITestCase(unittest.TestCase):
         tables = c.fetchall()
         
         assert tables[-1][0] == 1, "The addScores() function did not append the values to the Scores table with the supplied playerID"
-        assert tables[-1][1] == 420, "The addScores() function did not append the values to the Scores table with the supplied score"
-        assert tables[-1][2] == date, "The addScores() function did not append the values to the Scores table with the supplied date"      
+        assert tables[-1][1] == 'ABC', "The addScores() function did not append the playerName to the Scores table with the supplied playerName"
+        assert tables[-1][2] == 420, "The addScores() function did not append the values to the Scores table with the supplied score"
+        assert tables[-1][3] == date, "The addScores() function did not append the values to the Scores table with the supplied date"      
 
         
         
@@ -202,7 +215,6 @@ class dbAPITestCase(unittest.TestCase):
             '',
             7,
             3.14,
-            [],
             ['ABC'],
             {'ABC':0}
         ]
@@ -229,9 +241,9 @@ class dbAPITestCase(unittest.TestCase):
             '',
             7,
             3.14,
-            [],
-            ['ABC'],
-            {'ABC':0}
+            ['test@gmail.com'],
+            {'test@gmail.com':0},
+            ('test@gmail.com')
         ]
         
         for dataType in invalid_playerName_types:
