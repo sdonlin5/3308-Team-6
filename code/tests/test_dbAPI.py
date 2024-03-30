@@ -1,7 +1,7 @@
 
 """
 These are the unit tests for the datasbase API used in the Team Six Project 
-Last Modifeied: 3/17/2024 By: Patrick Sharp
+Last Modifeied: 3/29/2024 By: Patrick Sharp
 """
 
 
@@ -96,7 +96,7 @@ class dbAPITestCase(unittest.TestCase):
     This test checks for input errors in the database filename, playerId, and/or score. 
     This test also checks that the function works as intended
     Author(s): Patrick Sharp
-    Last Modified: 3/15/2024
+    Last Modified: 3/29/2024
     """
     def test_addScore(self):
         
@@ -195,7 +195,7 @@ class dbAPITestCase(unittest.TestCase):
     This test checks for input errors in the playerName and/or playerEmail in the addPlayer() function. 
     This test also checks that the function works as intended
     Author(s): Patrick Sharp
-    Last Modified: 3/16/2024
+    Last Modified: 3/16/202
     """       
     def test_addPlayer(self):
         
@@ -265,6 +265,50 @@ class dbAPITestCase(unittest.TestCase):
         assert tables[-1][3] == playerEmail, "The addPlayer() function did not append the values to the Players table with the supplied Email"
                 
 
+    
+    def test_getTopTenScores(self):
+
+        global db_filename
+        playerID = 1
+        playerName = 'TST'
+        scores = [
+            1,
+            777,
+            84,
+            354325,
+            8554,
+            74658899,
+            8534,
+            5,
+            321,
+            543,
+            6,
+            5345,
+            64311234,
+            667654,
+            5432,
+            333,
+            246523,
+            3
+        ]
+        
+        for score in scores:
+            dbAPI.addScore(db_filename, playerID, playerName, score)
+        
+        scores.sort()
+        topTen = dbAPI.getTopTenScores(db_filename)
+        
+        assert topTen[0][2] == scores[-1]
+        assert topTen[1][2] == scores[-2]
+        assert topTen[2][2] == scores[-3]
+        assert topTen[3][2] == scores[-4]
+        assert topTen[4][2] == scores[-5]
+        assert topTen[5][2] == scores[-6]
+        assert topTen[6][2] == scores[-7]
+        assert topTen[7][2] == scores[-8]
+        assert topTen[8][2] == scores[-9]
+        assert topTen[9][2] == scores[-10]
+        
     
     
 if __name__ == '__main__':

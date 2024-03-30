@@ -1,7 +1,7 @@
 
 """
 This is the datasbase API for the Team Six Project
-Last Modifeied: 3/17/2024 By: Patrick Sharp
+Last Modifeied: 3/29/2024 By: Patrick Sharp
 """
 
 
@@ -79,7 +79,7 @@ def create(db_filename: str):
 @Return 0, Void Function, But returns 0 when working successfully
 This function will connect to the database file given to add a players score to the Scores table in the DB
 Author(s): Patrick Sharp
-Last Mofdified: 3/15/2024
+Last Mofdified: 3/29/2024
 """
 def addScore(db_filename: str, playerID: int, playerName:str, score: int):
     
@@ -151,3 +151,19 @@ def addPlayer(db_filename: str, playerName: str, playerEmail: str):
     conn.commit()
     conn.close()
     return 0
+
+
+'''
+@Return a tuple of the top ten scores
+This function will query the Scores table to grab the top ten scores that will be used for the leaderboard
+Author(s): Patrick Sharp
+Last Mofdified: 3/29/2024
+'''
+def getTopTenScores(db_filename):
+    getTopTen = 'SELECT * FROM Scores ORDER BY score DESC LIMIT 10'
+    conn = sqlite3.connect(db_filename)
+    c = conn.cursor()
+    c.execute(getTopTen)
+    topTen = c.fetchall()
+    conn.close()
+    return topTen
