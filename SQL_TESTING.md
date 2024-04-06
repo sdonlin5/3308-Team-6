@@ -372,15 +372,142 @@ Notes:<br>
 N/A.<br>
 
 
+## Item Table
+### Description:<br>
+This table stores detailed information about various items within the game, including their effects, duration, and rarity.<br>
+
+### Fields:<br>
+itemID (INT): The unique identifier for the item.<br>
+itemName (VARCHAR(100)): The name of the item.<br>
+type (ENUM('buff', 'debuff')): The type of effect the item provides, whether it is a buff (enhances player abilities) or a debuff (reduces player abilities).<br>
+effect (VARCHAR(255)): A description of the effect that the item has when used.<br>
+duration (INT): The duration in seconds for which the effect lasts after the item is used.<br>
+rarity (ENUM('common', 'uncommon', 'rare', 'epic', 'legendary')): The rarity level of the item, indicating its commonness or uniqueness within the game.<br>
+
+### Tests:<br>
+
+#### Create Item Test
+
+Use case:<br>
+Verify that new items are correctly created and recorded in the database.<br>
+
+Description:<br>
+Test the function that adds new items to ensure it correctly captures all item details.<br>
+
+Pre-conditions:<br>
+Valid details such as itemID, itemName, type, effect, duration, and rarity are provided.<br>
+
+Test Steps:<br>
+1. Execute the function to add a new item with the provided details.<br>
+2. Retrieve the newly created item from the database.<br>
+3. Verify that all details match the input provided, including name, effect type, duration, and rarity.<br>
+
+Expected Result:<br>
+The database should reflect the newly added item with accurate details as provided.<br>
+
+Actual Result:<br>
+The details of the newly added item in the database match the provided specifications.<br>
+
+Status:<br>
+Pass.<br>
+
+Notes:<br>
+N/A.<br>
+
+#### Retrieve Item Details Test
+
+Use case:<br>
+Verify that the details of an existing item can be correctly retrieved from the database.<br>
+
+Description:<br>
+Test the function that fetches item details based on itemID.<br>
+
+Pre-conditions:<br>
+An existing itemID is used for retrieval.<br>
+
+Test Steps:<br>
+1. Execute the function to retrieve details for the specified itemID.<br>
+2. Verify that the retrieved item details match the expected information, including the item’s name, effect, duration, and rarity.<br>
+
+Expected Result:<br>
+The details retrieved for the item should match the stored values in the database.<br>
+
+Actual Result:<br>
+The retrieved item details accurately reflect the information stored in the database.<br>
+
+Status:<br>
+Pass.<br>
+
+Notes:<br>
+N/A.<br>
 
 
+## Obstacle Table
+### Description:<br>
+This table stores information about various obstacles within the game. Each record includes details about the obstacle's name, severity, and location, providing a way to manage and interact with in-game challenges.<br>
 
+### Fields:<br>
+obstacleID (INT): The unique identifier for the obstacle.<br>
+obstacleName (VARCHAR(100)): The name of the obstacle.<br>
+severity (INT): A numeric value indicating the difficulty or impact of the obstacle on players.<br>
+location (VARCHAR(100)): The in-game location where the obstacle is found.<br>
 
+### Tests:
 
+#### Create Obstacle Test
 
+Use case:<br>
+Verify that obstacles are correctly created and added to the database.<br>
 
+Description:<br>
+Test the function that creates and records new obstacles in the game environment.<br>
 
+Pre-conditions:<br>
+Valid obstacleID, obstacleName, severity, and location must be provided.<br>
 
+Test Steps:<br>
+1. Use the provided details to add a new obstacle to the database via the function.<br>
+2. Retrieve the obstacle details from the database.<br>
+3. Verify that the details in the database match those provided, including the name, severity, and location.<br>
+
+Expected Result:<br>
+The database should reflect the newly created obstacle with accurate details as provided.<br>
+
+Actual Result:<br>
+The details of the newly added obstacle in the database match the provided specifications.<br>
+
+Status:<br>
+Pass.<br>
+
+Notes:<br>
+N/A.<br>
+
+#### Retrieve Obstacle Details Test
+
+Use case:<br>
+Verify that details of an existing obstacle can be accurately retrieved from the database.<br>
+
+Description:<br>
+Test the function that fetches obstacle details based on obstacleID.<br>
+
+Pre-conditions:<br>
+An existing obstacleID is used for retrieval.<br>
+
+Test Steps:<br>
+1. Execute the function to retrieve details for the specified obstacleID.<br>
+2. Verify that the retrieved obstacle details match the expected information, including the obstacle's name, severity, and location.<br>
+
+Expected Result:<br>
+The details retrieved for the obstacle should match the stored values in the database.<br>
+
+Actual Result:<br>
+The retrieved obstacle details accurately reflect the information stored in the database.<br>
+
+Status:<br>
+Pass.<br>
+
+Notes:<br>
+N/A.<br>
 
 
 
